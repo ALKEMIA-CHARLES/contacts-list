@@ -22,8 +22,8 @@
 		<!--  SEARCH FORM -->
 		<header class="header">
 
-			<form class="search-bar">
-				<input type="search-name" class="contact-search" name="search-area" placeholder="Search">
+			<form action="/" method="GET" class="search-bar" id='search-form'>
+				<input type="search-name" class="contact-search" name="search-area" placeholder="Search" value="{{ search_input }}">
 			</form>
 
 			<!--  ADD-CONTACT BUTTON/ICON -->
@@ -46,6 +46,9 @@
 							<i class="fas fa-sms text"></i>
 						</li>
 					</div>
+
+					{% empty %}
+					<h3 style="color:#fff; padding: 20px;">No contacts found...</h3>
 					{% endfor %}
 			</ul>
 		</section>
